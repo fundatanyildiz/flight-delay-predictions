@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Status Prediction Dashboard</title>
+     <!-- Link the CSS file -->
+    <link rel="stylesheet" href="RouteSelectionPage.css">
+   
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <img src="aeroplane.png" alt="Flight" />
+            <h1>Flight Delay Prediction </h1>
+        </div>
+
+    <div class="graph">
+                <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                <!--<img src="graph.png" alt="Graph" />
+                <img id="image-display" alt="Image from backend">-->
+                  <img id="image-display" src="newplot.png" alt="Graph">
+            </div>
+</body>
+<script src="https://cdn.plot.ly/plotly-2.14.0.min.js" defer></script>
+<!--<script src="graphDisplay.js" defer></script>-->
+</html>
