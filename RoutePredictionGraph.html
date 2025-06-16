@@ -1,27 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Status Prediction Dashboard</title>
-     <!-- Link the CSS file -->
-    <link rel="stylesheet" href="RouteSelectionPage.css">
-   
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flight Status Prediction Dashboard</title>
+  <link rel="stylesheet" href="RouteSelectionPage.css">
+  <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
 </head>
 <body>
-    <div class="dashboard">
-        <div class="header">
-            <img src="aeroplane.png" alt="Flight" />
-            <h1>Flight Delay Prediction </h1>
-        </div>
+  <div class="dashboard">
+    <div class="header">
+      <img src="aeroplane.png" alt="Flight" />
+      <h1>Flight Delay Prediction</h1>
+    </div>
 
-    <div class="graph">
-                <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-                <!--<img src="graph.png" alt="Graph" />
-                <img id="image-display" alt="Image from backend">-->
-                  <img id="image-display" src="newplot.png" alt="Graph">
-            </div>
+    <div id="warning" style="color:red; font-weight: bold; font-size:xx-large"></div>
+    <div id="traffic" style="width:100%;max-width:1500px;"></div>
+    <br>
+    <div id="arrival_delay" style="width:100%;max-width:1500px"></div>
+    <br>
+    <div id="departure_delay" style="width:100%;max-width:1500px"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const data = JSON.parse(localStorage.getItem("graphData"));
+
+      if (!data || !data.arrival || !data.departure || !data.month) {
+        console.error("Invalid or missing graphData in localStorage.");
+        return;
+      }
+
+      const prefix = `graphs/${data.arrival}_${data.departure}_${data.month}`;
+
+      fetch(`${prefix}_traffic.json`)
+        .then(response => response.json())
+        .then(plotData => {
+        if (plotData.data && plotData.data.length > 0) {
+            Plotly.newPlot('traffic', plotData.data, plotData.layout);
+        }else{
+            document.getElementById("warning").textContent = "There is no available data for this route.";
+        }
+        })
+        .catch(error => console.error("Failed to load traffic plot:", error));
+
+      fetch(`${prefix}_arrival_delay.json`)
+        .then(response => response.json())
+        .then(plotData => {
+            if (plotData.data && plotData.data.length > 0) {
+            Plotly.newPlot('arrival_delay', plotData.data, plotData.layout);
+            } 
+        })
+        .catch(error => console.error("Failed to load arrival delay plot:", error));
+
+      fetch(`${prefix}_departure_delay.json`)
+        .then(response => response.json())
+        .then(plotData => {
+            if (plotData.data && plotData.data.length > 0) {
+                Plotly.newPlot('departure_delay', plotData.data, plotData.layout);
+            } 
+        })
+        .catch(error => console.error("Failed to load departure delay plot:", error));
+        
+    });
+  </script>
 </body>
-<script src="https://cdn.plot.ly/plotly-2.14.0.min.js" defer></script>
-<!--<script src="graphDisplay.js" defer></script>-->
 </html>

@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function populateDropdown(dropdown, data) {
     data.forEach(item => {
         const option = document.createElement("option");
-        option.value = item.name;
+        option.value = item.code;
         option.textContent = `${item.city} - ${item.name}`;
         dropdown.appendChild(option);
     });
@@ -30,31 +30,18 @@ function submitFlightSelection()
     // Get selected values from dropdowns
     const arrival = document.getElementById("arrival").value;
     const departure = document.getElementById("departure").value;
-    const month = document.getElementById('month').value;
+    const dateStr = document.getElementById('month').value;
     // Log selected values for debugging
     console.log('Arrival:', arrival);
     console.log('Departure:', departure);
-    console.log('selected Month:',month);
-   
- // Redirect to the new page after successful submission
-            window.location.href = "RoutePredictionGraph.html";
+    console.log('selected Month:',dateStr);
+    const month = parseInt(dateStr.split("-")[1], 10);
+    // Redirect to the new page after successful submission
+    const data = { arrival: arrival, departure: departure, month: month };
+    localStorage.setItem("graphData", JSON.stringify(data));
+    window.location.href = "RoutePredictionGraph.html";
     // Send the data to the backend
-    /*fetch('https://backend-api.com/submit', 
-        {
-            method: 'POST', // HTTP method
-            headers: {
-            'Content-Type': 'application/json' // Inform the backend of JSON content
-            },
-        body: JSON.stringify({ arrival, destination , month}) // Convert the data to JSON
-        })
-        .then(response => response.json()) // Parse the JSON response
-        .then(data => {
-            console.log('Success:', data);
-            
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });*/
+    
 }
 // Function to check dropdown values
 function validateSelections() 

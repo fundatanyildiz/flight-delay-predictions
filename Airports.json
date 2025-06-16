@@ -1,7 +1,27 @@
 [
-    { "name": "Los Angeles International Airport", "city": "Los Angeles,CA" },
-    { "name": "Harry Reid International Airport", "city": "Las Vegas, NV" },
-    { "name": "Chicago O'Hare International Airport", "city": "Chicago,IL" },
-    { "name": "San Francisco International Airport", "city": "San Francisco,CA" },
-    { "name": "LaGuardia Airport", "city": "New York City, NY" }
+  {
+    "name": "Los Angeles International Airport",
+    "city": "Los Angeles,CA",
+    "code": "LAX"
+  },
+  {
+    "name": "Harry Reid International Airport",
+    "city": "Las Vegas, NV",
+    "code": "LAS"
+  },
+  {
+    "name": "Chicago O'Hare International Airport",
+    "city": "Chicago,IL",
+    "code": "ORD"
+  },
+  {
+    "name": "San Francisco International Airport",
+    "city": "San Francisco,CA",
+    "code": "SFO"
+  },
+  {
+    "name": "LaGuardia Airport",
+    "city": "New York City, NY",
+    "code": "LGA"
+  }
 ]
