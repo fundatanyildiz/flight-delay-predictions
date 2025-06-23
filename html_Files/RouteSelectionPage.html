@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight Status Prediction Dashboard</title>
      <!-- Link the CSS file -->
-    <link rel="stylesheet" href="RouteSelectionPage.css">
+    <link rel="stylesheet" href="../css_Files/RouteSelectionPage.css">
 </head>
 <body>
     <div class="dashboard">
         <div class="header">
-            <img src="aeroplane.png" alt="Flight" />
+            <img src="../Images/aeroplane.png" alt="Flight" />
             <h1>Flight Delay Prediction </h1>
         </div>
         
@@ -24,7 +24,7 @@
                 <div class="flight-path">
                     <div class="location-start"></div>
                     <div class="curve"></div>
-                    <img src="aeroplane.png" alt="Airplane" class="airplane">
+                    <img src="../Images/aeroplane.png" alt="Airplane" class="airplane">
                     <div class="location-end"></div>
                 </div>
                 <div>
@@ -39,9 +39,9 @@
                 <label for="month">Select a Month:</label>
                 <input type="month" id="month" name="month" min="2020-01" max="2024-12">
             </div>
-            <p id="message">Please select both arrival and departure options.</p>
-        <button id="submitBtn" disabled>Generate Graph</button>
+            
+        <button id="submitBtn">Generate Graph</button>
     </div>
 </body>
-<script src="RouteSelectionPage.js" defer></script>
+<script src="../JS_Files/RouteSelectionPage.js" defer></script>
 </html>
