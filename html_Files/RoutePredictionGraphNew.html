@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flight Status Prediction Dashboard</title>
+  <link rel="stylesheet" href="../css_Files/RoutePredictionGraph.css">
+ 
+</head>
+<body>
+  <div class="dashboard">
+    <div class="header">
+        <img src="../Images/aeroplane.png" alt="Flight" />
+        <h1>Flight Delay Prediction</h1>
+    </div>
+    <div class = "errorIconDiv">
+        <img id="errorIcon" class ="errorIcon" src="../Images/errorIcon.png" alt="Flight"/>
+        <p id="error-message">""</p>
+    </div>
+   </div>
+    <div class="Graph">
+            <div id="traffic" style="width:100%;max-width:100%"></div>
+            <br>
+            <div id="arrival_delay" style="width:100%;max-width:100%"></div>
+            <br>
+            <div id="departure_delay" style="width:100%;max-width:100%"></div>
+    </div>
+ 
+</body>
+ <script src="https://cdn.plot.ly/plotly-3.0.1.min.js" defer></script>
+ <script src="../JS_Files/RoutePredictionGraphNew.js" defer></script>
+</html>

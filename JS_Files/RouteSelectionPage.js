@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const departureDropdown = document.getElementById("departure");
 
     // Fetch JSON data
-    fetch("Airports.json")
+    fetch("../JSON_Files/Airports.json")
         .then(response => response.json())
         .then(data => {
             // Sort airports alphabetically by city
@@ -39,46 +39,13 @@ function submitFlightSelection()
     // Redirect to the new page after successful submission
     const data = { arrival: arrival, departure: departure, month: month };
     localStorage.setItem("graphData", JSON.stringify(data));
-    window.location.href = "RoutePredictionGraph.html";
-    // Send the data to the backend
-    
+    window.location.href = "RoutePredictionGraphNew.html";
 }
-// Function to check dropdown values
-function validateSelections() 
+const message = document.getElementById("message");
+document.getElementById('submitBtn').addEventListener('click', (event) => 
 {
-     const arrival = document.getElementById("arrival").value;
-    const departure = document.getElementById("departure").value;
-     const month = document.getElementById('month').value;
-    const submitBtn = document.getElementById("submitBtn");
-    const message = document.getElementById("message");
-
-   
-        if ((arrival && departure && month) 
-            && (arrival!=" " && departure!=" " && month!=" "))
-            {
-            // Both dropdowns have valid selections
-            submitBtn.disabled = false;
-            message.style.display = "none"; // Hide the message
-            } 
-           else 
-            {
-                // At least one dropdown is not selected
-                submitBtn.disabled = true;
-                message.style.display = "block"; // Show the message
-            }     
-   
-
-}
-document.getElementById("arrival").addEventListener("change", validateSelections);
-document.getElementById("departure").addEventListener("change", validateSelections);
-document.getElementById("month").addEventListener("change", validateSelections);
-// Attach the function to the button click event
-    document.getElementById('submitBtn').addEventListener('click', (event) => {
     event.preventDefault(); // Prevent default form submission behavior
-   // document.getElementById("arrival").addEventListener("change", validateSelections);
-    //document.getElementById("departure").addEventListener("change", validateSelections);
-    //validateSelections();
-   submitFlightSelection();
-    });
-
+     submitFlightSelection();
+});
+   
 
