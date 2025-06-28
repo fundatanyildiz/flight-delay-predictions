@@ -1,8 +1,8 @@
 # flight-delay-predictions
 Techlabs Rotterdam 2025 Data Science Track Project
-# Current assumtions and Design of UI page
-1. The user selects the desired arrival and departure routes along with the required month.
-2. Upon clicking the submit button, an analyzed graph tailored to the user's requirements will be displayed.
+# Design of UI page
+1. The user selects the desired origin and destination routes along with the required month.
+2. Clicking the submit button will display a table of the top 5 most accurate flights for the selected route, along with an analyzed graph customized to the user's  preferences.
 
 ## Execute this command from your terminal
 ```bash

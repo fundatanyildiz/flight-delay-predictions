@@ -18,15 +18,35 @@
         <p id="error-message">""</p>
     </div>
    </div>
+    <div class="content">
+      <p>Top 5 Most Accurate Flights</p>
+      <div class="table-container">
+                <table class="table" id="table" >
+                    <thead>
+                        <tr>
+                            <th>Airline Name</th>
+                            <th>Number Of Flights</th>
+                            <th>Avg Arrival Delay(mins)</th>
+                            <th>Avg Departure Delay(mins)</th>
+                             <th>On time % (Arr less than 15 mins)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     <!-- Rows will be added here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+
     <div class="Graph">
-            <div id="traffic" style="width:100%;max-width:100%"></div>
+            <div id="traffic"></div>
             <br>
-            <div id="arrival_delay" style="width:100%;max-width:100%"></div>
+            <div id="arrival_delay"></div>
             <br>
-            <div id="departure_delay" style="width:100%;max-width:100%"></div>
+            <div id="departure_delay"></div>
     </div>
- 
+ </div>
 </body>
  <script src="https://cdn.plot.ly/plotly-3.0.1.min.js" defer></script>
  <script src="../JS_Files/RoutePredictionGraphNew.js" defer></script>
+ 
 </html>

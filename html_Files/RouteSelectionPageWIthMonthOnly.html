@@ -6,6 +6,7 @@
     <title>Flight Status Prediction Dashboard</title>
      <!-- Link the CSS file -->
     <link rel="stylesheet" href="../css_Files/RouteSelectionPage.css">
+  
 </head>
 <body>
     <div class="dashboard">
@@ -13,10 +14,10 @@
             <img src="../Images/aeroplane.png" alt="Flight" />
             <h1>Flight Delay Prediction </h1>
         </div>
-           <div class="mainContainer">
+        
             <div class="container">
                 <div>
-                    <label for="arrival">Origin Airport</label>
+                    <label for="arrival" class="origin-Label">Origin Airport</label>
                     <select id="arrival" class="dropdown">
                         <option value="" disabled selected>Select Origin</option>
                     </select>
@@ -28,17 +29,21 @@
                     <div class="location-end"></div>
                 </div>
                 <div>
-                    <label for="departure">Destination Airport</label>
+                    <label for="departure" class="destination-Label">Destination Airport</label>
                     <select id="departure" class="dropdown">
                         <option value="" disabled selected>Select Destination</option>
                     </select>
                 </div>
-                  </div class="dropdown">
-                    <div id="month"></div>
-          
-           </div>
+            
+            </div>
+            <div class="month-selection">
+                <div id="month">
+            </div>
+            </div>
+            
         <button id="submitBtn">Generate Graph</button>
     </div>
 </body>
+
 <script src="../JS_Files/RouteSelectionPage.js" defer></script>
 </html>
