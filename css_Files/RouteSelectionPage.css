@@ -1,12 +1,8 @@
  html
  {
-            
     font-family: Arial, sans-serif;
-    background: #22C1C3;
-    background: linear-gradient(0deg,rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
-    border: #22C1C3;
-    background-repeat: no-repeat; /* Ensure no repetition */
-    background-size: cover; /* Scale the image to cover the viewport */
+   background: #F7FFFE;
+   border: #C7F2FF;
     height:100%;
     width: 100%;
    
@@ -19,8 +15,7 @@
     align-items: center;
     padding: 20px;
     height:100%;
-     /*border:2px solid #66ae55;*/
-}
+ }
 
 .header 
 {
@@ -36,7 +31,7 @@
     margin-right: 20px;
     background-color: transparent; /* Ensures no background color for the image container */
     mix-blend-mode: multiply; /* Blends the image with its background */
-}
+} 
 
 .header h1 
 {
@@ -65,7 +60,17 @@
     gap: 10px; 
     font-size: 16px;
     padding: 60px;
-    width: 100%;
+}
+.mainContainer
+{
+    width: 80%;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
 }
 .box 
 {
@@ -77,15 +82,35 @@
     border: 1px solid #ccc; /* Add border for better visibility */
 }
 
-.dropdown 
+.dropdown{
+    font-size: 16px;
+    padding: 10px;
+    margin-top:10px;
+    border-radius: 5px;
+    border: 1px solid #b9ccbd;
+    width: 100%;
+    background-color:#E6E6FA
+}
+#month
+{
+    display: flex;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center;    /* Vertical alignment */
+    flex-direction: column; /* Stack items vertically */
+    margin-top: 20px;
+}
+#monthDropdown
 {
     font-size: 16px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #b9ccbd;
-    width: 100%;
-    background-color: #66ae55;;
+    background-color:#E6E6FA;
+    margin:10px;
+    align-items: center;
+   
 }
+
 
 .location-start {
     top: 60%;
@@ -118,15 +143,6 @@ border-top: 4px solid #558dae;
 border-radius: 50%;
 
 }
-.month-selection
-{
-    font-size: 16px;
-    padding: 20px;
-    border-radius: 5px;
-    border: 2px solid #b9ccbd;
-    background-color: #66ae55;
-}
-
 #submitBtn
 {
     margin-top:20px;
@@ -134,7 +150,7 @@ border-radius: 50%;
     padding: 20px;
     border-radius: 5px;
     border: 2px solid #b9ccbd;
-    background-color: #66ae55;
+   background-color:#E6E6FA;
 }
 
 
