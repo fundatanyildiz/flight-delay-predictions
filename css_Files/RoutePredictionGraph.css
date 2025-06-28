@@ -135,4 +135,10 @@ p#error-message{
     mix-blend-mode: multiply; /* Blends the image with its background */
 }
 
-
+p {
+  background-color: #f5f5f5; /* Light gray background */
+  font-weight: bold; /* Bold font */
+  padding: 10px; /* Optional: Add some padding for better spacing */
+  border-radius: 4px; /* Optional: Add rounded corners */
+  color: #333; /* Optional: Ensure text color is readable */
+}
