@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Status Prediction Dashboard</title>
+     <!-- Link the CSS file -->
+    <link rel="stylesheet" href="../css_Files/RouteSelectionPage.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <img src="../Images/aeroplane.png" alt="Flight" />
+            <h1>Flight Delay Prediction </h1>
+        </div>
+           <div class="mainContainer">
+            <div class="container">
+                <div>
+                    <label for="arrival">Origin Airport</label>
+                    <select id="arrival" class="dropdown">
+                        <option value="" disabled selected>Select Origin</option>
+                    </select>
+                </div>
+                <div class="flight-path">
+                    <div class="location-start"></div>
+                    <div class="curve"></div>
+                    <img src="../Images/aeroplane.png" alt="Airplane" class="airplane">
+                    <div class="location-end"></div>
+                </div>
+                <div>
+                    <label for="departure">Destination Airport</label>
+                    <select id="departure" class="dropdown">
+                        <option value="" disabled selected>Select Destination</option>
+                    </select>
+                </div>
+                  </div class="dropdown">
+                    <div id="month"></div>
+          
+           </div>
+        <button id="submitBtn">Generate Graph</button>
+    </div>
+</body>
+<script src="../JS_Files/RouteSelectionPage.js" defer></script>
+</html>
