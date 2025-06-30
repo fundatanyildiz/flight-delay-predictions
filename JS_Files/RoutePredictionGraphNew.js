@@ -1,9 +1,12 @@
-document.addEventListener("DOMContentLoaded", async function () {
+document.addEventListener("DOMContentLoaded", async function () 
+{
     const data = JSON.parse(localStorage.getItem("graphData"));
     const errorMessageElement = document.getElementById("error-message");
     const errorIcon = document.getElementById("errorIcon");
-    
-    // Check UI elements exist
+    const tableContainer = document.getElementById("table-container");
+    tableContainer.style.display = "none";
+    console.log("tableContainer" + tableContainer.style.display);
+// Check UI elements exist
     if (!errorMessageElement || !errorIcon) {
         console.error("Error UI elements not found");
         return;
@@ -12,8 +15,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Hide error UI initially
     errorMessageElement.style.display = "none";
     errorIcon.style.display = "none";
-
-    try {
+    tableContainer.style.display = "none";
+   try {
         const emptyFieldArray = [];
        
         const isEmpty = val => val == null || (typeof val === "string" && val.trim() === "");
@@ -49,14 +52,31 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 });
 
-async function fetchMostAccurateFlights(url,errorMsg) {
-     
-      const module = await import('../JS_Files/TableCreation.js'); // Dynamic import
-      //console.log(module.JSON);
-      
-    
+async function fetchMostAccurateFlights(url,errorMsg) //Passing parameters are not used in this function
+ {    
+    const script = document.createElement("script");
+    script.src = "../JS_Files/TableCreation.js";
+    script.onload = function () 
+    {
+        const tableObj = document.getElementById("table");
+        const tableContainer1 = document.getElementById("table-container");
+        tableContainer1.style.display = "none";
+   
+        if (window.processSecondScript) 
+        {
+           window.processSecondScript(tableObj,tableContainer1);
+             tableContainer1.style.display = "block";
+        } 
+        else 
+        {
+            console.error("Function `processSecondScript` not found in TableCreation.js.");
+             tableContainer1.style.display = "none";
+        }
+    ;
+   document.body.appendChild(script);
 }
 async function fetchAndPlot(url, elementId, errorMsg) {
+ 
     try {
         const response = await fetch(url);
         const plotData = await response.json();

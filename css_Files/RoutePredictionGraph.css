@@ -70,16 +70,14 @@
         overflow: auto; /* Add scrolling inside the container if needed */
         }
      
-    .table-container {
+    #table-container {
             flex: 1;
-           
-  
-    }
-
+            display:none;
+        }
         .table {
             width: 100%;
             border-collapse: collapse;
-             display:none;
+            /*display: none;*/
         }
 
         .table th, .table td {
@@ -135,10 +133,11 @@ p#error-message{
     mix-blend-mode: multiply; /* Blends the image with its background */
 }
 
-p {
-  background-color: #f5f5f5; /* Light gray background */
-  font-weight: bold; /* Bold font */
+#tableCaption {
+  font-size:20px;
   padding: 10px; /* Optional: Add some padding for better spacing */
   border-radius: 4px; /* Optional: Add rounded corners */
   color: #333; /* Optional: Ensure text color is readable */
+  background-color:antiquewhite;
+  font-family: Arial, sans-serif;
 }
